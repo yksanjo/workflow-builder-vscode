@@ -1,0 +1,35 @@
+{
+  "name": "workflow-builder-vscode",
+  "version": "1.0.0",
+  "description": "VS Code Extension - Visual DAG Builder for Multi-Agent Pipelines",
+  "main": "extension.js",
+  "scripts": {
+    "test": "node test/runTest.js"
+  },
+  "keywords": ["vscode", "extension", "workflow", "agent", "dag"],
+  "author": "yksanjo",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:workflowBuilder.open"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "workflowBuilder.open",
+        "title": "Open Workflow Builder"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "workflowBuilder.open",
+          "when": "editorLangId == json",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "dependencies": {}
+}
